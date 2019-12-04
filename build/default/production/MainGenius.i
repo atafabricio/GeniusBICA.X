@@ -4961,45 +4961,15 @@ int temp;
 int inicio = 0;
 int flag = 1;
 
-int Memoria1[20];
+int Memoria1[6];
 
 
-void display(int u)
+
+void envia(void)
 {
-
-    const char tabela []={
-
-          0X3F,
-          0X06,
-          0X5B,
-          0X4F,
-          0X66,
-          0X6D,
-          0X7D,
-          0X07,
-          0X7F,
-          0X67,
-          0X77,
-          0X7C,
-          0X39,
-          0X5E,
-          0X79,
-          0X71
-       };
-   PORTD=tabela[u];
-
-   _delay((unsigned long)((5)*(4000000/4000.0)));
-
-}
-
-void Write_Display(int u){
-     int uni, dez;
-        uni = u%10;
-        dez = u/10;
-        PORTB = 0B00001000;
-        display(uni);
-        PORTB = 0B00010000;
-        display(dez);
+    while(!TXIF)
+           {}
+               TXREG = level-1;
 }
 
 void Som_Botao1()
@@ -5048,18 +5018,23 @@ void iniciogame()
         level = 1;
         _delay((unsigned long)((100)*(4000000/4000.0)));
         }
+
     lcd_clear();
     inicio=0;
+    Som_Inicial();
 }
 
 void Som_Perdeu()
 {
+
     PORTBbits.RB7 = 1; PORTBbits.RB6 = 1;
     lcd_clear();
     lcd_puts("Perdeu");
+    envia();
     _delay((unsigned long)((1000)*(4000000/4000.0)));
     lcd_clear();
     PORTBbits.RB7 = 0; PORTBbits.RB6 = 0;
+
     iniciogame();
 }
 
@@ -5067,8 +5042,10 @@ void Som_Ganhou()
 {
     PORTBbits.RB7 = 1; PORTBbits.RB6 = 1; PORTBbits.RB5 = 1; PORTBbits.RB0 = 1;
     lcd_clear();
-    lcd_puts("Parabens");
-    _delay((unsigned long)((1000)*(4000000/4000.0)));
+    lcd_puts(" | Parabens | ");
+    lcd_goto(40);
+    lcd_puts(" | Voce Venceu |");
+    _delay((unsigned long)((10000)*(4000000/4000.0)));
     lcd_clear();
     PORTBbits.RB7 = 0; PORTBbits.RB6 = 0; PORTBbits.RB5 = 0; PORTBbits.RB0 = 0;
 }
@@ -5127,23 +5104,24 @@ void main()
 
     PORTD = 0;
     PORTE = 0;
-# 208 "MainGenius.c"
+    LATA5=1;
     jogo();
 }
 
 void jogo(){
     GIE=1;
+    TXREG=-1;
     iniciogame();
     int flags = 0;
-    Som_Inicial();
     while(1)
     {
+
         GerarSequencia();
         MostraSequencia();
         pos = 1;
 
         lcd_clear();
-        lcd_puts("Aguardando...");
+        lcd_puts("Insira sequencia...");
 
         while(1)
         {
@@ -5172,7 +5150,7 @@ void jogo(){
                flags = 0;
                Som_Botao2();
              if(VerificarSequencia(1, pos)){
-                    pos++;
+                       pos++;
              }
              else{
                 Som_Perdeu();
@@ -5212,14 +5190,17 @@ void jogo(){
              lcd_clear();
              lcd_puts("Fase Concluida");
              _delay((unsigned long)((1000)*(4000000/4000.0)));
+             envia();
              lcd_clear();
              break;
         }
     }
-        if(level == 20)
+        if(level == 6)
            {
+              envia();
               level = 1;
               Som_Ganhou();
+
               iniciogame();
            }
     }
@@ -5233,6 +5214,9 @@ void __attribute__((picinterrupt(("high_priority")))) tmr (void)
         if(RCREG==2)
         {
             level=1;
+            lcd_clear();
+            lcd_puts("JOGO CANCELADO");
+            _delay((unsigned long)((1000)*(4000000/4000.0)));
             jogo();
         }
         else if (RCREG==1){

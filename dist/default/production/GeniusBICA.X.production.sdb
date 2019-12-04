@@ -5,10 +5,6 @@
 [d frameptr 4065 ]
 "72 C:\Users\atafa\MPLABXProjects\GeniusBICA.X/configura.h
 [v _config config `(v  1 e 1 0 ]
-"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\float.c
@@ -49,53 +45,57 @@
 "62
 [v _lcd_puts lcd_puts `(v  1 e 1 0 ]
 [v i2_lcd_puts lcd_puts `(v  1 e 1 0 ]
+"84
+[v _lcd_goto lcd_goto `(v  1 e 1 0 ]
+[v i2_lcd_goto lcd_goto `(v  1 e 1 0 ]
 "92
 [v _lcd_init lcd_init `(v  1 e 1 0 ]
-"37 C:\Users\atafa\MPLABXProjects\GeniusBICA.X\MainGenius.c
-[v _display display `(v  1 e 1 0 ]
-"75
+"38 C:\Users\atafa\MPLABXProjects\GeniusBICA.X\MainGenius.c
+[v _envia envia `(v  1 e 1 0 ]
+[v i2_envia envia `(v  1 e 1 0 ]
+"45
 [v _Som_Botao1 Som_Botao1 `(v  1 e 1 0 ]
 [v i2_Som_Botao1 Som_Botao1 `(v  1 e 1 0 ]
-"82
+"52
 [v _Som_Botao2 Som_Botao2 `(v  1 e 1 0 ]
 [v i2_Som_Botao2 Som_Botao2 `(v  1 e 1 0 ]
-"89
+"59
 [v _Som_Botao3 Som_Botao3 `(v  1 e 1 0 ]
 [v i2_Som_Botao3 Som_Botao3 `(v  1 e 1 0 ]
-"96
+"66
 [v _Som_Botao4 Som_Botao4 `(v  1 e 1 0 ]
 [v i2_Som_Botao4 Som_Botao4 `(v  1 e 1 0 ]
-"103
+"73
 [v _Som_Inicial Som_Inicial `(v  1 e 1 0 ]
 [v i2_Som_Inicial Som_Inicial `(v  1 e 1 0 ]
-"112
+"82
 [v _iniciogame iniciogame `(v  1 e 1 0 ]
 [v i2_iniciogame iniciogame `(v  1 e 1 0 ]
-"125
+"97
 [v _Som_Perdeu Som_Perdeu `(v  1 e 1 0 ]
 [v i2_Som_Perdeu Som_Perdeu `(v  1 e 1 0 ]
-"136
+"111
 [v _Som_Ganhou Som_Ganhou `(v  1 e 1 0 ]
 [v i2_Som_Ganhou Som_Ganhou `(v  1 e 1 0 ]
-"147
+"124
 [v _GerarSequencia GerarSequencia `(v  1 e 1 0 ]
 [v i2_GerarSequencia GerarSequencia `(v  1 e 1 0 ]
-"161
+"138
 [v _MostraSequencia MostraSequencia `(v  1 e 1 0 ]
 [v i2_MostraSequencia MostraSequencia `(v  1 e 1 0 ]
-"178
+"155
 [v _VerificarSequencia VerificarSequencia `(uc  1 e 1 0 ]
 [v i2_VerificarSequencia VerificarSequencia `(uc  1 e 1 0 ]
-"190
+"167
 [v _main main `(v  1 e 1 0 ]
-"211
+"181
 [v _jogo jogo `(v  1 e 1 0 ]
 [v i2_jogo jogo `(v  1 e 1 0 ]
-"305
+"279
 [v _tmr tmr `IIH(v  1 e 1 0 ]
 "271 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
-[s S50 . 1 `uc 1 RB0 1 0 :1:0 
+[s S44 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -105,7 +105,7 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "315
-[s S59 . 1 `uc 1 INT0 1 0 :1:0 
+[s S53 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 CCP2 1 0 :1:3 
@@ -114,7 +114,7 @@
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S68 . 1 `uc 1 AN12 1 0 :1:0 
+[s S62 . 1 `uc 1 AN12 1 0 :1:0 
 `uc 1 AN10 1 0 :1:1 
 `uc 1 AN8 1 0 :1:2 
 `uc 1 AN9 1 0 :1:3 
@@ -123,14 +123,14 @@
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S77 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S71 . 1 `uc 1 FLT0 1 0 :1:0 
 ]
-[s S79 . 1 `uc 1 . 1 0 :3:0 
+[s S73 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S82 . 1 `S50 1 . 1 0 `S59 1 . 1 0 `S68 1 . 1 0 `S77 1 . 1 0 `S79 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES82  1 e 1 @3969 ]
-[s S151 . 1 `uc 1 RC0 1 0 :1:0 
+[u S76 . 1 `S44 1 . 1 0 `S53 1 . 1 0 `S62 1 . 1 0 `S71 1 . 1 0 `S73 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES76  1 e 1 @3969 ]
+[s S159 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -140,7 +140,7 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "497
-[s S160 . 1 `uc 1 T1OSO 1 0 :1:0 
+[s S168 . 1 `uc 1 T1OSO 1 0 :1:0 
 `uc 1 T1OSI 1 0 :1:1 
 `uc 1 CCP1 1 0 :1:2 
 `uc 1 SCK 1 0 :1:3 
@@ -149,7 +149,7 @@
 `uc 1 TX 1 0 :1:6 
 `uc 1 RX 1 0 :1:7 
 ]
-[s S169 . 1 `uc 1 T13CKI 1 0 :1:0 
+[s S177 . 1 `uc 1 T13CKI 1 0 :1:0 
 `uc 1 CCP2 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 SCL 1 0 :1:3 
@@ -158,16 +158,16 @@
 `uc 1 CK 1 0 :1:6 
 `uc 1 DT 1 0 :1:7 
 ]
-[s S178 . 1 `uc 1 T1CKI 1 0 :1:0 
+[s S186 . 1 `uc 1 T1CKI 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 P1A 1 0 :1:2 
 ]
-[s S182 . 1 `uc 1 . 1 0 :1:0 
+[s S190 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 PA2 1 0 :1:1 
 `uc 1 PA1 1 0 :1:2 
 ]
-[u S186 . 1 `S151 1 . 1 0 `S160 1 . 1 0 `S169 1 . 1 0 `S178 1 . 1 0 `S182 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES186  1 e 1 @3970 ]
+[u S194 . 1 `S159 1 . 1 0 `S168 1 . 1 0 `S177 1 . 1 0 `S186 1 . 1 0 `S190 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES194  1 e 1 @3970 ]
 "632
 [v _PORTD PORTD `VEuc  1 e 1 @3971 ]
 "774
@@ -186,6 +186,8 @@
 [v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
 "3320
 [v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
+"3576
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
 "3588
 [v _RCREG RCREG `VEuc  1 e 1 @4014 ]
 "3600
@@ -212,6 +214,8 @@
 [v _GIE GIE `VEb  1 e 0 @32663 ]
 "7546
 [v _IPEN IPEN `VEb  1 e 0 @32391 ]
+"7615
+[v _LATA5 LATA5 `VEb  1 e 0 @31821 ]
 "7777
 [v _LE0 LE0 `VEb  1 e 0 @31848 ]
 "7780
@@ -222,6 +226,8 @@
 [v _RCIF RCIF `VEb  1 e 0 @31989 ]
 "8179
 [v _RCIP RCIP `VEb  1 e 0 @31997 ]
+"8731
+[v _TXIF TXIF `VEb  1 e 0 @31988 ]
 "7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\rand.c
 [v _seed seed `uo  1 s 8 seed ]
 "28 C:\Users\atafa\MPLABXProjects\GeniusBICA.X\MainGenius.c
@@ -231,91 +237,105 @@
 "31
 [v _inicio inicio `i  1 e 2 0 ]
 "34
-[v _Memoria1 Memoria1 `[20]i  1 e 40 0 ]
-"190
+[v _Memoria1 Memoria1 `[6]i  1 e 12 0 ]
+"167
 [v _main main `(v  1 e 1 0 ]
 {
-"209
+"179
 } 0
 "92 C:\Users\atafa\MPLABXProjects\GeniusBICA.X\lcd.c
 [v _lcd_init lcd_init `(v  1 e 1 0 ]
 {
 "118
 } 0
-"211 C:\Users\atafa\MPLABXProjects\GeniusBICA.X\MainGenius.c
+"181 C:\Users\atafa\MPLABXProjects\GeniusBICA.X\MainGenius.c
 [v _jogo jogo `(v  1 e 1 0 ]
 {
-"214
-[v jogo@flags flags `i  1 a 2 30 ]
-"303
+"185
+[v jogo@flags flags `i  1 a 2 34 ]
+"277
 } 0
-"178
+"155
 [v _VerificarSequencia VerificarSequencia `(uc  1 e 1 0 ]
 {
-[v VerificarSequencia@but but `i  1 p 2 50 ]
-[v VerificarSequencia@cnt cnt `i  1 p 2 52 ]
-"186
+[v VerificarSequencia@but but `i  1 p 2 52 ]
+[v VerificarSequencia@cnt cnt `i  1 p 2 54 ]
+"163
 } 0
-"125
+"97
 [v _Som_Perdeu Som_Perdeu `(v  1 e 1 0 ]
 {
-"134
-} 0
-"112
-[v _iniciogame iniciogame `(v  1 e 1 0 ]
-{
-"123
-} 0
-"103
-[v _Som_Inicial Som_Inicial `(v  1 e 1 0 ]
-{
-"110
-} 0
-"136
-[v _Som_Ganhou Som_Ganhou `(v  1 e 1 0 ]
-{
-"144
-} 0
-"161
-[v _MostraSequencia MostraSequencia `(v  1 e 1 0 ]
-{
-"162
-[v MostraSequencia@i i `i  1 a 2 54 ]
-"174
-} 0
-"96
-[v _Som_Botao4 Som_Botao4 `(v  1 e 1 0 ]
-{
-"101
-} 0
-"89
-[v _Som_Botao3 Som_Botao3 `(v  1 e 1 0 ]
-{
-"94
+"109
 } 0
 "82
-[v _Som_Botao2 Som_Botao2 `(v  1 e 1 0 ]
+[v _iniciogame iniciogame `(v  1 e 1 0 ]
 {
-"87
+"95
 } 0
-"75
-[v _Som_Botao1 Som_Botao1 `(v  1 e 1 0 ]
+"73
+[v _Som_Inicial Som_Inicial `(v  1 e 1 0 ]
 {
 "80
 } 0
-"147
+"38
+[v _envia envia `(v  1 e 1 0 ]
+{
+"43
+} 0
+"111
+[v _Som_Ganhou Som_Ganhou `(v  1 e 1 0 ]
+{
+"121
+} 0
+"84 C:\Users\atafa\MPLABXProjects\GeniusBICA.X\lcd.c
+[v _lcd_goto lcd_goto `(v  1 e 1 0 ]
+{
+[v lcd_goto@pos pos `uc  1 a 1 wreg ]
+[v lcd_goto@pos pos `uc  1 a 1 wreg ]
+"86
+[v lcd_goto@pos pos `uc  1 a 1 53 ]
+"88
+} 0
+"138 C:\Users\atafa\MPLABXProjects\GeniusBICA.X\MainGenius.c
+[v _MostraSequencia MostraSequencia `(v  1 e 1 0 ]
+{
+"139
+[v MostraSequencia@i i `i  1 a 2 56 ]
+"151
+} 0
+"66
+[v _Som_Botao4 Som_Botao4 `(v  1 e 1 0 ]
+{
+"71
+} 0
+"59
+[v _Som_Botao3 Som_Botao3 `(v  1 e 1 0 ]
+{
+"64
+} 0
+"52
+[v _Som_Botao2 Som_Botao2 `(v  1 e 1 0 ]
+{
+"57
+} 0
+"45
+[v _Som_Botao1 Som_Botao1 `(v  1 e 1 0 ]
+{
+"50
+} 0
+"124
 [v _GerarSequencia GerarSequencia `(v  1 e 1 0 ]
 {
-"150
-[v GerarSequencia@random random `i  1 a 2 26 ]
-"149
-[v GerarSequencia@semente semente `ui  1 a 2 24 ]
-"159
+"127
+[v GerarSequencia@random random `i  1 a 2 30 ]
+"126
+[v GerarSequencia@semente semente `ui  1 a 2 28 ]
+"136
 } 0
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\rand.c
 [v _srand srand `(v  1 e 1 0 ]
 {
-[v srand@s s `ui  1 p 2 50 ]
+[v srand@s s `ui  1 p 2 52 ]
 "13
 } 0
 "15
@@ -327,7 +347,7 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 {
 "93
-[v ___omul@product product `uo  1 a 8 50 ]
+[v ___omul@product product `uo  1 a 8 52 ]
 "91
 [v ___omul@multiplier multiplier `uo  1 p 8 0 ]
 [v ___omul@multiplicand multiplicand `uo  1 p 8 8 ]
@@ -336,7 +356,7 @@
 "62 C:\Users\atafa\MPLABXProjects\GeniusBICA.X\lcd.c
 [v _lcd_puts lcd_puts `(v  1 e 1 0 ]
 {
-[v lcd_puts@s s `*.32Cuc  1 p 2 51 ]
+[v lcd_puts@s s `*.32Cuc  1 p 2 53 ]
 "67
 } 0
 "52
@@ -350,7 +370,7 @@
 [v lcd_write@c c `uc  1 a 1 wreg ]
 [v lcd_write@c c `uc  1 a 1 wreg ]
 "40
-[v lcd_write@c c `uc  1 a 1 50 ]
+[v lcd_write@c c `uc  1 a 1 52 ]
 "45
 } 0
 "72 C:\Users\atafa\MPLABXProjects\GeniusBICA.X/configura.h
@@ -358,76 +378,90 @@
 {
 "93
 } 0
-"305 C:\Users\atafa\MPLABXProjects\GeniusBICA.X\MainGenius.c
+"279 C:\Users\atafa\MPLABXProjects\GeniusBICA.X\MainGenius.c
 [v _tmr tmr `IIH(v  1 e 1 0 ]
 {
-"319
+"296
 } 0
-"211
+"181
 [v i2_jogo jogo `(v  1 e 1 0 ]
 {
 [v i2jogo@flags jogo `i  1 a 2 42 ]
-"303
+"277
 } 0
-"178
+"155
 [v i2_VerificarSequencia VerificarSequencia `(uc  1 e 1 0 ]
 {
 [v i2VerificarSequencia@but but `i  1 p 2 0 ]
 [v i2VerificarSequencia@cnt cnt `i  1 p 2 2 ]
-"186
+"163
 } 0
-"125
+"97
 [v i2_Som_Perdeu Som_Perdeu `(v  1 e 1 0 ]
 {
-"134
-} 0
-"112
-[v i2_iniciogame iniciogame `(v  1 e 1 0 ]
-{
-"123
-} 0
-"103
-[v i2_Som_Inicial Som_Inicial `(v  1 e 1 0 ]
-{
-"110
-} 0
-"136
-[v i2_Som_Ganhou Som_Ganhou `(v  1 e 1 0 ]
-{
-"144
-} 0
-"161
-[v i2_MostraSequencia MostraSequencia `(v  1 e 1 0 ]
-{
-[v i2MostraSequencia@i MostraSequencia `i  1 a 2 4 ]
-"174
-} 0
-"96
-[v i2_Som_Botao4 Som_Botao4 `(v  1 e 1 0 ]
-{
-"101
-} 0
-"89
-[v i2_Som_Botao3 Som_Botao3 `(v  1 e 1 0 ]
-{
-"94
+"109
 } 0
 "82
-[v i2_Som_Botao2 Som_Botao2 `(v  1 e 1 0 ]
+[v i2_iniciogame iniciogame `(v  1 e 1 0 ]
 {
-"87
+"95
 } 0
-"75
-[v i2_Som_Botao1 Som_Botao1 `(v  1 e 1 0 ]
+"73
+[v i2_Som_Inicial Som_Inicial `(v  1 e 1 0 ]
 {
 "80
 } 0
-"147
+"38
+[v i2_envia envia `(v  1 e 1 0 ]
+{
+"43
+} 0
+"111
+[v i2_Som_Ganhou Som_Ganhou `(v  1 e 1 0 ]
+{
+"121
+} 0
+"84 C:\Users\atafa\MPLABXProjects\GeniusBICA.X\lcd.c
+[v i2_lcd_goto lcd_goto `(v  1 e 1 0 ]
+{
+[v i2lcd_goto@pos pos `uc  1 a 1 wreg ]
+[v i2lcd_goto@pos pos `uc  1 a 1 wreg ]
+"86
+[v i2lcd_goto@pos pos `uc  1 a 1 1 ]
+"88
+} 0
+"138 C:\Users\atafa\MPLABXProjects\GeniusBICA.X\MainGenius.c
+[v i2_MostraSequencia MostraSequencia `(v  1 e 1 0 ]
+{
+[v i2MostraSequencia@i MostraSequencia `i  1 a 2 4 ]
+"151
+} 0
+"66
+[v i2_Som_Botao4 Som_Botao4 `(v  1 e 1 0 ]
+{
+"71
+} 0
+"59
+[v i2_Som_Botao3 Som_Botao3 `(v  1 e 1 0 ]
+{
+"64
+} 0
+"52
+[v i2_Som_Botao2 Som_Botao2 `(v  1 e 1 0 ]
+{
+"57
+} 0
+"45
+[v i2_Som_Botao1 Som_Botao1 `(v  1 e 1 0 ]
+{
+"50
+} 0
+"124
 [v i2_GerarSequencia GerarSequencia `(v  1 e 1 0 ]
 {
 [v i2GerarSequencia@random GerarSequencia `i  1 a 2 38 ]
 [v i2GerarSequencia@semente GerarSequencia `ui  1 a 2 36 ]
-"159
+"136
 } 0
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\rand.c
 [v i2_srand srand `(v  1 e 1 0 ]

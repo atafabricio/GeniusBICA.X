@@ -53,16 +53,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3600
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3600: extern volatile unsigned char SPBRG __attribute__((address(0xFAF)));
 [v _SPBRG `Vuc ~T0 @X0 0 e@4015 ]
-"632
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 632: extern volatile unsigned char PORTD __attribute__((address(0xF83)));
-[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
-[v F3077 `(v ~T0 @X0 1 tf1`ul ]
-"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
-[v __delay `JF3077 ~T0 @X0 0 e ]
-[p i __delay ]
-"271 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 271: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
-[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"8731
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 8731: extern volatile __bit TXIF __attribute__((address(0x7CF4)));
+[v _TXIF `Vb ~T0 @X0 0 e@31988 ]
+"3576
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3576: extern volatile unsigned char TXREG __attribute__((address(0xFAD)));
+[v _TXREG `Vuc ~T0 @X0 0 e@4013 ]
 "277
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 277:     struct {
 [s S20 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -90,12 +86,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "315
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 315: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
 [v _PORTBbits `VS19 ~T0 @X0 0 e@3969 ]
+[v F3077 `(v ~T0 @X0 1 tf1`ul ]
+"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
+[v __delay `JF3077 ~T0 @X0 0 e ]
+[p i __delay ]
 "12 ./lcd.h
 [; ;./lcd.h: 12: extern void lcd_clear(void);
 [v _lcd_clear `(v ~T0 @X0 0 ef ]
 "16
 [; ;./lcd.h: 16: extern void lcd_puts(const char * s);
 [v _lcd_puts `(v ~T0 @X0 0 ef1`*Cuc ]
+"20
+[; ;./lcd.h: 20: extern void lcd_goto(unsigned char pos);
+[v _lcd_goto `(v ~T0 @X0 0 ef1`uc ]
 "6265 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6265: extern volatile unsigned char TMR0H __attribute__((address(0xFD7)));
 [v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
@@ -112,11 +115,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24 ./lcd.h
 [; ;./lcd.h: 24: extern void lcd_init(void);
 [v _lcd_init `(v ~T0 @X0 0 ef ]
-"774 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
+"271 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 271: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
+[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"632
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 632: extern volatile unsigned char PORTD __attribute__((address(0xF83)));
+[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
+"774
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 774: extern volatile unsigned char PORTE __attribute__((address(0xF84)));
 [v _PORTE `Vuc ~T0 @X0 0 e@3972 ]
-"188 MainGenius.c
-[; ;MainGenius.c: 188: void jogo();
+"7615
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7615: extern volatile __bit LATA5 __attribute__((address(0x7C4D)));
+[v _LATA5 `Vb ~T0 @X0 0 e@31821 ]
+"165 MainGenius.c
+[; ;MainGenius.c: 165: void jogo();
 [v _jogo `(v ~T0 @X0 0 e? ]
 "7411 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7411: extern volatile __bit GIE __attribute__((address(0x7F97)));
@@ -714,860 +726,841 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 1 `i
 ]
 "34
-[; ;MainGenius.c: 34: int Memoria1[20];
-[v _Memoria1 `i ~T0 @X0 -> 20 `i e ]
-"37
-[; ;MainGenius.c: 37: void display(int u)
-[v _display `(v ~T0 @X0 1 ef1`i ]
+[; ;MainGenius.c: 34: int Memoria1[6];
+[v _Memoria1 `i ~T0 @X0 -> 6 `i e ]
 "38
-[; ;MainGenius.c: 38: {
+[; ;MainGenius.c: 38: void envia(void)
+[v _envia `(v ~T0 @X0 1 ef ]
+"39
+[; ;MainGenius.c: 39: {
 {
-[e :U _display ]
-"37
-[; ;MainGenius.c: 37: void display(int u)
-[v _u `i ~T0 @X0 1 r1 ]
-"38
-[; ;MainGenius.c: 38: {
+[e :U _envia ]
 [f ]
 "40
-[; ;MainGenius.c: 40:     const char tabela []={
-[v F3255 `Cuc ~T0 @X0 -> 16 `i s tabela ]
-[i F3255
-:U ..
--> -> 63 `i `uc
--> -> 6 `i `uc
--> -> 91 `i `uc
--> -> 79 `i `uc
--> -> 102 `i `uc
--> -> 109 `i `uc
--> -> 125 `i `uc
--> -> 7 `i `uc
--> -> 127 `i `uc
--> -> 103 `i `uc
--> -> 119 `i `uc
--> -> 124 `i `uc
--> -> 57 `i `uc
--> -> 94 `i `uc
--> -> 121 `i `uc
--> -> 113 `i `uc
-..
-]
-"59
-[; ;MainGenius.c: 59:    PORTD=tabela[u];
-[e = _PORTD -> *U + &U F3255 * -> -> _u `ui `ux -> -> # *U &U F3255 `ui `ux `uc ]
-"61
-[; ;MainGenius.c: 61:    _delay((unsigned long)((5)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"63
-[; ;MainGenius.c: 63: }
+[; ;MainGenius.c: 40:     while(!TXIF)
+[e $U 290  ]
+[e :U 291 ]
+"41
+[; ;MainGenius.c: 41:            {}
+{
+}
+[e :U 290 ]
+"40
+[; ;MainGenius.c: 40:     while(!TXIF)
+[e $ ! _TXIF 291  ]
+[e :U 292 ]
+"42
+[; ;MainGenius.c: 42:                TXREG = level-1;
+[e = _TXREG -> - _level -> 1 `i `uc ]
+"43
+[; ;MainGenius.c: 43: }
 [e :UE 289 ]
 }
-"65
-[; ;MainGenius.c: 65: void Write_Display(int u){
-[v _Write_Display `(v ~T0 @X0 1 ef1`i ]
-{
-[e :U _Write_Display ]
-[v _u `i ~T0 @X0 1 r1 ]
-[f ]
-"66
-[; ;MainGenius.c: 66:      int uni, dez;
-[v _uni `i ~T0 @X0 1 a ]
-[v _dez `i ~T0 @X0 1 a ]
-"67
-[; ;MainGenius.c: 67:         uni = u%10;
-[e = _uni % _u -> 10 `i ]
-"68
-[; ;MainGenius.c: 68:         dez = u/10;
-[e = _dez / _u -> 10 `i ]
-"69
-[; ;MainGenius.c: 69:         PORTB = 0B00001000;
-[e = _PORTB -> -> 8 `i `uc ]
-"70
-[; ;MainGenius.c: 70:         display(uni);
-[e ( _display (1 _uni ]
-"71
-[; ;MainGenius.c: 71:         PORTB = 0B00010000;
-[e = _PORTB -> -> 16 `i `uc ]
-"72
-[; ;MainGenius.c: 72:         display(dez);
-[e ( _display (1 _dez ]
-"73
-[; ;MainGenius.c: 73: }
-[e :UE 290 ]
-}
-"75
-[; ;MainGenius.c: 75: void Som_Botao1()
+"45
+[; ;MainGenius.c: 45: void Som_Botao1()
 [v _Som_Botao1 `(v ~T0 @X0 1 ef ]
-"76
-[; ;MainGenius.c: 76: {
+"46
+[; ;MainGenius.c: 46: {
 {
 [e :U _Som_Botao1 ]
 [f ]
-"77
-[; ;MainGenius.c: 77:     PORTBbits.RB7 = 1;
+"47
+[; ;MainGenius.c: 47:     PORTBbits.RB7 = 1;
 [e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
-"78
-[; ;MainGenius.c: 78:     _delay((unsigned long)((300)*(4000000/4000.0)));
+"48
+[; ;MainGenius.c: 48:     _delay((unsigned long)((300)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"79
-[; ;MainGenius.c: 79:     PORTBbits.RB7 = 0;
+"49
+[; ;MainGenius.c: 49:     PORTBbits.RB7 = 0;
 [e = . . _PORTBbits 0 7 -> -> 0 `i `uc ]
-"80
-[; ;MainGenius.c: 80: }
-[e :UE 291 ]
+"50
+[; ;MainGenius.c: 50: }
+[e :UE 293 ]
 }
-"82
-[; ;MainGenius.c: 82: void Som_Botao2()
+"52
+[; ;MainGenius.c: 52: void Som_Botao2()
 [v _Som_Botao2 `(v ~T0 @X0 1 ef ]
-"83
-[; ;MainGenius.c: 83: {
+"53
+[; ;MainGenius.c: 53: {
 {
 [e :U _Som_Botao2 ]
 [f ]
-"84
-[; ;MainGenius.c: 84:     PORTBbits.RB6 = 1;
+"54
+[; ;MainGenius.c: 54:     PORTBbits.RB6 = 1;
 [e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
-"85
-[; ;MainGenius.c: 85:     _delay((unsigned long)((300)*(4000000/4000.0)));
+"55
+[; ;MainGenius.c: 55:     _delay((unsigned long)((300)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"86
-[; ;MainGenius.c: 86:     PORTBbits.RB6 = 0;
+"56
+[; ;MainGenius.c: 56:     PORTBbits.RB6 = 0;
 [e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
-"87
-[; ;MainGenius.c: 87: }
-[e :UE 292 ]
+"57
+[; ;MainGenius.c: 57: }
+[e :UE 294 ]
 }
-"89
-[; ;MainGenius.c: 89: void Som_Botao3()
+"59
+[; ;MainGenius.c: 59: void Som_Botao3()
 [v _Som_Botao3 `(v ~T0 @X0 1 ef ]
-"90
-[; ;MainGenius.c: 90: {
+"60
+[; ;MainGenius.c: 60: {
 {
 [e :U _Som_Botao3 ]
 [f ]
-"91
-[; ;MainGenius.c: 91:     PORTBbits.RB5 = 1;
+"61
+[; ;MainGenius.c: 61:     PORTBbits.RB5 = 1;
 [e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
-"92
-[; ;MainGenius.c: 92:     _delay((unsigned long)((300)*(4000000/4000.0)));
+"62
+[; ;MainGenius.c: 62:     _delay((unsigned long)((300)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"93
-[; ;MainGenius.c: 93:     PORTBbits.RB5 = 0;
+"63
+[; ;MainGenius.c: 63:     PORTBbits.RB5 = 0;
 [e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
-"94
-[; ;MainGenius.c: 94: }
-[e :UE 293 ]
+"64
+[; ;MainGenius.c: 64: }
+[e :UE 295 ]
 }
-"96
-[; ;MainGenius.c: 96: void Som_Botao4()
+"66
+[; ;MainGenius.c: 66: void Som_Botao4()
 [v _Som_Botao4 `(v ~T0 @X0 1 ef ]
-"97
-[; ;MainGenius.c: 97: {
+"67
+[; ;MainGenius.c: 67: {
 {
 [e :U _Som_Botao4 ]
 [f ]
-"98
-[; ;MainGenius.c: 98:     PORTBbits.RB0 = 1;
+"68
+[; ;MainGenius.c: 68:     PORTBbits.RB0 = 1;
 [e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
-"99
-[; ;MainGenius.c: 99:     _delay((unsigned long)((300)*(4000000/4000.0)));
+"69
+[; ;MainGenius.c: 69:     _delay((unsigned long)((300)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"100
-[; ;MainGenius.c: 100:     PORTBbits.RB0 = 0;
+"70
+[; ;MainGenius.c: 70:     PORTBbits.RB0 = 0;
 [e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
-"101
-[; ;MainGenius.c: 101: }
-[e :UE 294 ]
+"71
+[; ;MainGenius.c: 71: }
+[e :UE 296 ]
 }
-"103
-[; ;MainGenius.c: 103: void Som_Inicial()
+"73
+[; ;MainGenius.c: 73: void Som_Inicial()
 [v _Som_Inicial `(v ~T0 @X0 1 ef ]
-"104
-[; ;MainGenius.c: 104: {
+"74
+[; ;MainGenius.c: 74: {
 {
 [e :U _Som_Inicial ]
 [f ]
-"105
-[; ;MainGenius.c: 105:     PORTBbits.RB7 = 1; PORTBbits.RB6 = 1; PORTBbits.RB5 = 1; PORTBbits.RB0 = 1;
+"75
+[; ;MainGenius.c: 75:     PORTBbits.RB7 = 1; PORTBbits.RB6 = 1; PORTBbits.RB5 = 1; PORTBbits.RB0 = 1;
 [e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
 [e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
 [e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
 [e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
-"106
-[; ;MainGenius.c: 106:     lcd_clear();
+"76
+[; ;MainGenius.c: 76:     lcd_clear();
 [e ( _lcd_clear ..  ]
-"107
-[; ;MainGenius.c: 107:     lcd_puts("Bem Vindo s2");
+"77
+[; ;MainGenius.c: 77:     lcd_puts("Bem Vindo s2");
 [e ( _lcd_puts (1 :s 1C ]
-"108
-[; ;MainGenius.c: 108:     _delay((unsigned long)((2000)*(4000000/4000.0)));
+"78
+[; ;MainGenius.c: 78:     _delay((unsigned long)((2000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"109
-[; ;MainGenius.c: 109:     PORTBbits.RB7 = 0; PORTBbits.RB6 = 0; PORTBbits.RB5 = 0; PORTBbits.RB0 = 0;
+"79
+[; ;MainGenius.c: 79:     PORTBbits.RB7 = 0; PORTBbits.RB6 = 0; PORTBbits.RB5 = 0; PORTBbits.RB0 = 0;
 [e = . . _PORTBbits 0 7 -> -> 0 `i `uc ]
 [e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
 [e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
 [e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
-"110
-[; ;MainGenius.c: 110: }
-[e :UE 295 ]
+"80
+[; ;MainGenius.c: 80: }
+[e :UE 297 ]
 }
-"112
-[; ;MainGenius.c: 112: void iniciogame()
+"82
+[; ;MainGenius.c: 82: void iniciogame()
 [v _iniciogame `(v ~T0 @X0 1 ef ]
-"113
-[; ;MainGenius.c: 113: {
+"83
+[; ;MainGenius.c: 83: {
 {
 [e :U _iniciogame ]
 [f ]
+"84
+[; ;MainGenius.c: 84:     lcd_clear();
+[e ( _lcd_clear ..  ]
+"85
+[; ;MainGenius.c: 85:     lcd_puts("Aperte em jogar");
+[e ( _lcd_puts (1 :s 2C ]
+"86
+[; ;MainGenius.c: 86:     while (inicio!=1)
+[e $U 299  ]
+[e :U 300 ]
+"87
+[; ;MainGenius.c: 87:         {
+{
+"88
+[; ;MainGenius.c: 88:         level = 1;
+[e = _level -> 1 `i ]
+"89
+[; ;MainGenius.c: 89:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"90
+[; ;MainGenius.c: 90:         }
+}
+[e :U 299 ]
+"86
+[; ;MainGenius.c: 86:     while (inicio!=1)
+[e $ != _inicio -> 1 `i 300  ]
+[e :U 301 ]
+"92
+[; ;MainGenius.c: 92:     lcd_clear();
+[e ( _lcd_clear ..  ]
+"93
+[; ;MainGenius.c: 93:     inicio=0;
+[e = _inicio -> 0 `i ]
+"94
+[; ;MainGenius.c: 94:     Som_Inicial();
+[e ( _Som_Inicial ..  ]
+"95
+[; ;MainGenius.c: 95: }
+[e :UE 298 ]
+}
+"97
+[; ;MainGenius.c: 97: void Som_Perdeu()
+[v _Som_Perdeu `(v ~T0 @X0 1 ef ]
+"98
+[; ;MainGenius.c: 98: {
+{
+[e :U _Som_Perdeu ]
+[f ]
+"100
+[; ;MainGenius.c: 100:     PORTBbits.RB7 = 1; PORTBbits.RB6 = 1;
+[e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
+[e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
+"101
+[; ;MainGenius.c: 101:     lcd_clear();
+[e ( _lcd_clear ..  ]
+"102
+[; ;MainGenius.c: 102:     lcd_puts("Perdeu");
+[e ( _lcd_puts (1 :s 3C ]
+"103
+[; ;MainGenius.c: 103:     envia();
+[e ( _envia ..  ]
+"104
+[; ;MainGenius.c: 104:     _delay((unsigned long)((1000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"105
+[; ;MainGenius.c: 105:     lcd_clear();
+[e ( _lcd_clear ..  ]
+"106
+[; ;MainGenius.c: 106:     PORTBbits.RB7 = 0; PORTBbits.RB6 = 0;
+[e = . . _PORTBbits 0 7 -> -> 0 `i `uc ]
+[e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
+"108
+[; ;MainGenius.c: 108:     iniciogame();
+[e ( _iniciogame ..  ]
+"109
+[; ;MainGenius.c: 109: }
+[e :UE 302 ]
+}
+"111
+[; ;MainGenius.c: 111: void Som_Ganhou()
+[v _Som_Ganhou `(v ~T0 @X0 1 ef ]
+"112
+[; ;MainGenius.c: 112: {
+{
+[e :U _Som_Ganhou ]
+[f ]
+"113
+[; ;MainGenius.c: 113:     PORTBbits.RB7 = 1; PORTBbits.RB6 = 1; PORTBbits.RB5 = 1; PORTBbits.RB0 = 1;
+[e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
+[e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
+[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
 "114
 [; ;MainGenius.c: 114:     lcd_clear();
 [e ( _lcd_clear ..  ]
 "115
-[; ;MainGenius.c: 115:     lcd_puts("Aperte em jogar");
-[e ( _lcd_puts (1 :s 2C ]
-"116
-[; ;MainGenius.c: 116:     while (inicio!=1)
-[e $U 297  ]
-[e :U 298 ]
-"117
-[; ;MainGenius.c: 117:         {
-{
-"118
-[; ;MainGenius.c: 118:         level = 1;
-[e = _level -> 1 `i ]
-"119
-[; ;MainGenius.c: 119:         _delay((unsigned long)((100)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"120
-[; ;MainGenius.c: 120:         }
-}
-[e :U 297 ]
-"116
-[; ;MainGenius.c: 116:     while (inicio!=1)
-[e $ != _inicio -> 1 `i 298  ]
-[e :U 299 ]
-"121
-[; ;MainGenius.c: 121:     lcd_clear();
-[e ( _lcd_clear ..  ]
-"122
-[; ;MainGenius.c: 122:     inicio=0;
-[e = _inicio -> 0 `i ]
-"123
-[; ;MainGenius.c: 123: }
-[e :UE 296 ]
-}
-"125
-[; ;MainGenius.c: 125: void Som_Perdeu()
-[v _Som_Perdeu `(v ~T0 @X0 1 ef ]
-"126
-[; ;MainGenius.c: 126: {
-{
-[e :U _Som_Perdeu ]
-[f ]
-"127
-[; ;MainGenius.c: 127:     PORTBbits.RB7 = 1; PORTBbits.RB6 = 1;
-[e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
-[e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
-"128
-[; ;MainGenius.c: 128:     lcd_clear();
-[e ( _lcd_clear ..  ]
-"129
-[; ;MainGenius.c: 129:     lcd_puts("Perdeu");
-[e ( _lcd_puts (1 :s 3C ]
-"130
-[; ;MainGenius.c: 130:     _delay((unsigned long)((1000)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"131
-[; ;MainGenius.c: 131:     lcd_clear();
-[e ( _lcd_clear ..  ]
-"132
-[; ;MainGenius.c: 132:     PORTBbits.RB7 = 0; PORTBbits.RB6 = 0;
-[e = . . _PORTBbits 0 7 -> -> 0 `i `uc ]
-[e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
-"133
-[; ;MainGenius.c: 133:     iniciogame();
-[e ( _iniciogame ..  ]
-"134
-[; ;MainGenius.c: 134: }
-[e :UE 300 ]
-}
-"136
-[; ;MainGenius.c: 136: void Som_Ganhou()
-[v _Som_Ganhou `(v ~T0 @X0 1 ef ]
-"137
-[; ;MainGenius.c: 137: {
-{
-[e :U _Som_Ganhou ]
-[f ]
-"138
-[; ;MainGenius.c: 138:     PORTBbits.RB7 = 1; PORTBbits.RB6 = 1; PORTBbits.RB5 = 1; PORTBbits.RB0 = 1;
-[e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
-[e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
-[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
-[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
-"139
-[; ;MainGenius.c: 139:     lcd_clear();
-[e ( _lcd_clear ..  ]
-"140
-[; ;MainGenius.c: 140:     lcd_puts("Parabens");
+[; ;MainGenius.c: 115:     lcd_puts(" | Parabens | ");
 [e ( _lcd_puts (1 :s 4C ]
-"141
-[; ;MainGenius.c: 141:     _delay((unsigned long)((1000)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"142
-[; ;MainGenius.c: 142:     lcd_clear();
+"116
+[; ;MainGenius.c: 116:     lcd_goto(40);
+[e ( _lcd_goto (1 -> -> 40 `i `uc ]
+"117
+[; ;MainGenius.c: 117:     lcd_puts(" | Voce Venceu |");
+[e ( _lcd_puts (1 :s 5C ]
+"118
+[; ;MainGenius.c: 118:     _delay((unsigned long)((10000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"119
+[; ;MainGenius.c: 119:     lcd_clear();
 [e ( _lcd_clear ..  ]
-"143
-[; ;MainGenius.c: 143:     PORTBbits.RB7 = 0; PORTBbits.RB6 = 0; PORTBbits.RB5 = 0; PORTBbits.RB0 = 0;
+"120
+[; ;MainGenius.c: 120:     PORTBbits.RB7 = 0; PORTBbits.RB6 = 0; PORTBbits.RB5 = 0; PORTBbits.RB0 = 0;
 [e = . . _PORTBbits 0 7 -> -> 0 `i `uc ]
 [e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
 [e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
 [e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
-"144
-[; ;MainGenius.c: 144: }
-[e :UE 301 ]
+"121
+[; ;MainGenius.c: 121: }
+[e :UE 303 ]
 }
-"147
-[; ;MainGenius.c: 147: void GerarSequencia()
+"124
+[; ;MainGenius.c: 124: void GerarSequencia()
 [v _GerarSequencia `(v ~T0 @X0 1 ef ]
-"148
-[; ;MainGenius.c: 148: {
+"125
+[; ;MainGenius.c: 125: {
 {
 [e :U _GerarSequencia ]
 [f ]
-"149
-[; ;MainGenius.c: 149: unsigned semente;
+"126
+[; ;MainGenius.c: 126: unsigned semente;
 [v _semente `ui ~T0 @X0 1 a ]
-"150
-[; ;MainGenius.c: 150: int random;
+"127
+[; ;MainGenius.c: 127: int random;
 [v _random `i ~T0 @X0 1 a ]
-"152
-[; ;MainGenius.c: 152:     semente = (TMR0H << 8) + TMR0L;
+"129
+[; ;MainGenius.c: 129:     semente = (TMR0H << 8) + TMR0L;
 [e = _semente -> + << -> _TMR0H `i -> 8 `i -> _TMR0L `i `ui ]
-"153
-[; ;MainGenius.c: 153:     srand(semente);
+"130
+[; ;MainGenius.c: 130:     srand(semente);
 [e ( _srand (1 _semente ]
-"154
-[; ;MainGenius.c: 154:     lcd_clear();
+"131
+[; ;MainGenius.c: 131:     lcd_clear();
 [e ( _lcd_clear ..  ]
-"155
-[; ;MainGenius.c: 155:      lcd_puts("Gerando");
-[e ( _lcd_puts (1 :s 5C ]
-"156
-[; ;MainGenius.c: 156:         random = (rand() % 4);
+"132
+[; ;MainGenius.c: 132:      lcd_puts("Gerando");
+[e ( _lcd_puts (1 :s 6C ]
+"133
+[; ;MainGenius.c: 133:         random = (rand() % 4);
 [e = _random % ( _rand ..  -> 4 `i ]
-"157
-[; ;MainGenius.c: 157:         Memoria1[level] = random;
+"134
+[; ;MainGenius.c: 134:         Memoria1[level] = random;
 [e = *U + &U _Memoria1 * -> -> _level `ui `ux -> -> # *U &U _Memoria1 `ui `ux _random ]
-"158
-[; ;MainGenius.c: 158:          _delay((unsigned long)((1000)*(4000000/4000.0)));
+"135
+[; ;MainGenius.c: 135:          _delay((unsigned long)((1000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"159
-[; ;MainGenius.c: 159: }
-[e :UE 302 ]
+"136
+[; ;MainGenius.c: 136: }
+[e :UE 304 ]
 }
-"161
-[; ;MainGenius.c: 161: void MostraSequencia(){
+"138
+[; ;MainGenius.c: 138: void MostraSequencia(){
 [v _MostraSequencia `(v ~T0 @X0 1 ef ]
 {
 [e :U _MostraSequencia ]
 [f ]
-"162
-[; ;MainGenius.c: 162:     int i;
+"139
+[; ;MainGenius.c: 139:     int i;
 [v _i `i ~T0 @X0 1 a ]
-"163
-[; ;MainGenius.c: 163:     for(i=1;i<=level;i++){
+"140
+[; ;MainGenius.c: 140:     for(i=1;i<=level;i++){
 {
 [e = _i -> 1 `i ]
-[e $U 307  ]
-[e :U 304 ]
-{
-"164
-[; ;MainGenius.c: 164:         _delay((unsigned long)((500)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"165
-[; ;MainGenius.c: 165:          if(Memoria1[i] == 0)
-[e $ ! == *U + &U _Memoria1 * -> -> _i `ui `ux -> -> # *U &U _Memoria1 `ui `ux -> 0 `i 308  ]
-"166
-[; ;MainGenius.c: 166:            Som_Botao1();
-[e ( _Som_Botao1 ..  ]
 [e $U 309  ]
-"167
-[; ;MainGenius.c: 167:          else if(Memoria1[i] == 1)
-[e :U 308 ]
-[e $ ! == *U + &U _Memoria1 * -> -> _i `ui `ux -> -> # *U &U _Memoria1 `ui `ux -> 1 `i 310  ]
-"168
-[; ;MainGenius.c: 168:            Som_Botao2();
-[e ( _Som_Botao2 ..  ]
+[e :U 306 ]
+{
+"141
+[; ;MainGenius.c: 141:         _delay((unsigned long)((500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"142
+[; ;MainGenius.c: 142:          if(Memoria1[i] == 0)
+[e $ ! == *U + &U _Memoria1 * -> -> _i `ui `ux -> -> # *U &U _Memoria1 `ui `ux -> 0 `i 310  ]
+"143
+[; ;MainGenius.c: 143:            Som_Botao1();
+[e ( _Som_Botao1 ..  ]
 [e $U 311  ]
-"169
-[; ;MainGenius.c: 169:          else if(Memoria1[i] == 2)
+"144
+[; ;MainGenius.c: 144:          else if(Memoria1[i] == 1)
 [e :U 310 ]
-[e $ ! == *U + &U _Memoria1 * -> -> _i `ui `ux -> -> # *U &U _Memoria1 `ui `ux -> 2 `i 312  ]
-"170
-[; ;MainGenius.c: 170:            Som_Botao3();
-[e ( _Som_Botao3 ..  ]
+[e $ ! == *U + &U _Memoria1 * -> -> _i `ui `ux -> -> # *U &U _Memoria1 `ui `ux -> 1 `i 312  ]
+"145
+[; ;MainGenius.c: 145:            Som_Botao2();
+[e ( _Som_Botao2 ..  ]
 [e $U 313  ]
-"171
-[; ;MainGenius.c: 171:          else
+"146
+[; ;MainGenius.c: 146:          else if(Memoria1[i] == 2)
 [e :U 312 ]
-"172
-[; ;MainGenius.c: 172:            Som_Botao4();
+[e $ ! == *U + &U _Memoria1 * -> -> _i `ui `ux -> -> # *U &U _Memoria1 `ui `ux -> 2 `i 314  ]
+"147
+[; ;MainGenius.c: 147:            Som_Botao3();
+[e ( _Som_Botao3 ..  ]
+[e $U 315  ]
+"148
+[; ;MainGenius.c: 148:          else
+[e :U 314 ]
+"149
+[; ;MainGenius.c: 149:            Som_Botao4();
 [e ( _Som_Botao4 ..  ]
+[e :U 315 ]
 [e :U 313 ]
 [e :U 311 ]
-[e :U 309 ]
-"173
-[; ;MainGenius.c: 173:     }
+"150
+[; ;MainGenius.c: 150:     }
 }
 [e ++ _i -> 1 `i ]
+[e :U 309 ]
+[e $ <= _i _level 306  ]
 [e :U 307 ]
-[e $ <= _i _level 304  ]
-[e :U 305 ]
 }
-"174
-[; ;MainGenius.c: 174: }
-[e :UE 303 ]
+"151
+[; ;MainGenius.c: 151: }
+[e :UE 305 ]
 }
-"178
-[; ;MainGenius.c: 178: char VerificarSequencia(int but, int cnt)
+"155
+[; ;MainGenius.c: 155: char VerificarSequencia(int but, int cnt)
 [v _VerificarSequencia `(uc ~T0 @X0 1 ef2`i`i ]
-"179
-[; ;MainGenius.c: 179: {
+"156
+[; ;MainGenius.c: 156: {
 {
 [e :U _VerificarSequencia ]
-"178
-[; ;MainGenius.c: 178: char VerificarSequencia(int but, int cnt)
+"155
+[; ;MainGenius.c: 155: char VerificarSequencia(int but, int cnt)
 [v _but `i ~T0 @X0 1 r1 ]
 [v _cnt `i ~T0 @X0 1 r2 ]
-"179
-[; ;MainGenius.c: 179: {
+"156
+[; ;MainGenius.c: 156: {
 [f ]
-"181
-[; ;MainGenius.c: 181:  if(but!=Memoria1[cnt]){
-[e $ ! != _but *U + &U _Memoria1 * -> -> _cnt `ui `ux -> -> # *U &U _Memoria1 `ui `ux 315  ]
+"158
+[; ;MainGenius.c: 158:  if(but!=Memoria1[cnt]){
+[e $ ! != _but *U + &U _Memoria1 * -> -> _cnt `ui `ux -> -> # *U &U _Memoria1 `ui `ux 317  ]
 {
-"182
-[; ;MainGenius.c: 182:   return 0;
+"159
+[; ;MainGenius.c: 159:   return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 314  ]
-"183
-[; ;MainGenius.c: 183:  }
+[e $UE 316  ]
+"160
+[; ;MainGenius.c: 160:  }
 }
-[e $U 316  ]
-"184
-[; ;MainGenius.c: 184:     else
-[e :U 315 ]
-"185
-[; ;MainGenius.c: 185:      return 1;
+[e $U 318  ]
+"161
+[; ;MainGenius.c: 161:     else
+[e :U 317 ]
+"162
+[; ;MainGenius.c: 162:      return 1;
 [e ) -> -> 1 `i `uc ]
-[e $UE 314  ]
-[e :U 316 ]
-"186
-[; ;MainGenius.c: 186: }
-[e :UE 314 ]
+[e $UE 316  ]
+[e :U 318 ]
+"163
+[; ;MainGenius.c: 163: }
+[e :UE 316 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"190
-[; ;MainGenius.c: 190: void main()
+"167
+[; ;MainGenius.c: 167: void main()
 [v _main `(v ~T0 @X0 1 ef ]
-"192
-[; ;MainGenius.c: 192: {
+"169
+[; ;MainGenius.c: 169: {
 {
 [e :U _main ]
 [f ]
-"193
-[; ;MainGenius.c: 193:         config();
+"170
+[; ;MainGenius.c: 170:         config();
 [e ( _config ..  ]
-"194
-[; ;MainGenius.c: 194:         lcd_clear();
+"171
+[; ;MainGenius.c: 171:         lcd_clear();
 [e ( _lcd_clear ..  ]
-"195
-[; ;MainGenius.c: 195:         lcd_init();
+"172
+[; ;MainGenius.c: 172:         lcd_init();
 [e ( _lcd_init ..  ]
-"196
-[; ;MainGenius.c: 196:     PORTB = 0;
+"173
+[; ;MainGenius.c: 173:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"198
-[; ;MainGenius.c: 198:     PORTD = 0;
+"175
+[; ;MainGenius.c: 175:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"199
-[; ;MainGenius.c: 199:     PORTE = 0;
+"176
+[; ;MainGenius.c: 176:     PORTE = 0;
 [e = _PORTE -> -> 0 `i `uc ]
-"208
-[; ;MainGenius.c: 208:     jogo();
+"177
+[; ;MainGenius.c: 177:     LATA5=1;
+[e = _LATA5 -> -> 1 `i `b ]
+"178
+[; ;MainGenius.c: 178:     jogo();
 [e ( _jogo ..  ]
-"209
-[; ;MainGenius.c: 209: }
-[e :UE 317 ]
+"179
+[; ;MainGenius.c: 179: }
+[e :UE 319 ]
 }
-"211
-[; ;MainGenius.c: 211: void jogo(){
+"181
+[; ;MainGenius.c: 181: void jogo(){
 [v _jogo `(v ~T0 @X0 1 ef ]
 {
 [e :U _jogo ]
 [f ]
-"212
-[; ;MainGenius.c: 212:     GIE=1;
+"182
+[; ;MainGenius.c: 182:     GIE=1;
 [e = _GIE -> -> 1 `i `b ]
-"213
-[; ;MainGenius.c: 213:     iniciogame();
+"183
+[; ;MainGenius.c: 183:     TXREG=-1;
+[e = _TXREG -> -U -> 1 `i `uc ]
+"184
+[; ;MainGenius.c: 184:     iniciogame();
 [e ( _iniciogame ..  ]
-"214
-[; ;MainGenius.c: 214:     int flags = 0;
+"185
+[; ;MainGenius.c: 185:     int flags = 0;
 [v _flags `i ~T0 @X0 1 a ]
 [e = _flags -> 0 `i ]
-"215
-[; ;MainGenius.c: 215:     Som_Inicial();
-[e ( _Som_Inicial ..  ]
-"216
-[; ;MainGenius.c: 216:     while(1)
-[e :U 320 ]
-"217
-[; ;MainGenius.c: 217:     {
+"186
+[; ;MainGenius.c: 186:     while(1)
+[e :U 322 ]
+"187
+[; ;MainGenius.c: 187:     {
 {
-"218
-[; ;MainGenius.c: 218:         GerarSequencia();
+"189
+[; ;MainGenius.c: 189:         GerarSequencia();
 [e ( _GerarSequencia ..  ]
-"219
-[; ;MainGenius.c: 219:         MostraSequencia();
+"190
+[; ;MainGenius.c: 190:         MostraSequencia();
 [e ( _MostraSequencia ..  ]
-"220
-[; ;MainGenius.c: 220:         pos = 1;
+"191
+[; ;MainGenius.c: 191:         pos = 1;
 [e = _pos -> 1 `i ]
-"222
-[; ;MainGenius.c: 222:         lcd_clear();
+"193
+[; ;MainGenius.c: 193:         lcd_clear();
 [e ( _lcd_clear ..  ]
-"223
-[; ;MainGenius.c: 223:         lcd_puts("Aguardando...");
-[e ( _lcd_puts (1 :s 6C ]
-"225
-[; ;MainGenius.c: 225:         while(1)
-[e :U 323 ]
-"226
-[; ;MainGenius.c: 226:         {
-{
-"228
-[; ;MainGenius.c: 228:             if(!PORTCbits.RC1) flags = 1;
-[e $ ! ! != -> . . _PORTCbits 0 1 `i -> 0 `i 325  ]
-[e = _flags -> 1 `i ]
-[e $U 326  ]
-"229
-[; ;MainGenius.c: 229:            else if(!PORTCbits.RC2) flags = 2;
+"194
+[; ;MainGenius.c: 194:         lcd_puts("Insira sequencia...");
+[e ( _lcd_puts (1 :s 7C ]
+"196
+[; ;MainGenius.c: 196:         while(1)
 [e :U 325 ]
-[e $ ! ! != -> . . _PORTCbits 0 2 `i -> 0 `i 327  ]
-[e = _flags -> 2 `i ]
+"197
+[; ;MainGenius.c: 197:         {
+{
+"199
+[; ;MainGenius.c: 199:             if(!PORTCbits.RC1) flags = 1;
+[e $ ! ! != -> . . _PORTCbits 0 1 `i -> 0 `i 327  ]
+[e = _flags -> 1 `i ]
 [e $U 328  ]
-"230
-[; ;MainGenius.c: 230:            else if(!PORTCbits.RC3) flags = 3;
+"200
+[; ;MainGenius.c: 200:            else if(!PORTCbits.RC2) flags = 2;
 [e :U 327 ]
-[e $ ! ! != -> . . _PORTCbits 0 3 `i -> 0 `i 329  ]
-[e = _flags -> 3 `i ]
+[e $ ! ! != -> . . _PORTCbits 0 2 `i -> 0 `i 329  ]
+[e = _flags -> 2 `i ]
 [e $U 330  ]
-"231
-[; ;MainGenius.c: 231:            else if(!PORTCbits.RC0) flags = 4;
+"201
+[; ;MainGenius.c: 201:            else if(!PORTCbits.RC3) flags = 3;
 [e :U 329 ]
-[e $ ! ! != -> . . _PORTCbits 0 0 `i -> 0 `i 331  ]
-[e = _flags -> 4 `i ]
+[e $ ! ! != -> . . _PORTCbits 0 3 `i -> 0 `i 331  ]
+[e = _flags -> 3 `i ]
+[e $U 332  ]
+"202
+[; ;MainGenius.c: 202:            else if(!PORTCbits.RC0) flags = 4;
 [e :U 331 ]
+[e $ ! ! != -> . . _PORTCbits 0 0 `i -> 0 `i 333  ]
+[e = _flags -> 4 `i ]
+[e :U 333 ]
+[e :U 332 ]
 [e :U 330 ]
 [e :U 328 ]
-[e :U 326 ]
+"205
+[; ;MainGenius.c: 205:            if(PORTCbits.RC1 && flags == 1)
+[e $ ! && != -> . . _PORTCbits 0 1 `i -> 0 `i == _flags -> 1 `i 334  ]
+"206
+[; ;MainGenius.c: 206:            {
+{
+"207
+[; ;MainGenius.c: 207:                flags = 0;
+[e = _flags -> 0 `i ]
+"208
+[; ;MainGenius.c: 208:                Som_Botao1();
+[e ( _Som_Botao1 ..  ]
+"209
+[; ;MainGenius.c: 209:              if(VerificarSequencia(0, pos))
+[e $ ! != -> ( _VerificarSequencia (2 , -> 0 `i _pos `i -> 0 `i 335  ]
+"210
+[; ;MainGenius.c: 210:              {
+{
+"211
+[; ;MainGenius.c: 211:                     pos++;
+[e ++ _pos -> 1 `i ]
+"212
+[; ;MainGenius.c: 212:              }
+}
+[e $U 336  ]
+"213
+[; ;MainGenius.c: 213:              else{
+[e :U 335 ]
+{
+"214
+[; ;MainGenius.c: 214:                 Som_Perdeu();
+[e ( _Som_Perdeu ..  ]
+"215
+[; ;MainGenius.c: 215:                 break;
+[e $U 326  ]
+"216
+[; ;MainGenius.c: 216:              }
+}
+[e :U 336 ]
+"217
+[; ;MainGenius.c: 217:            }
+}
+[e $U 337  ]
+"218
+[; ;MainGenius.c: 218:            else if(PORTCbits.RC2 && flags == 2)
+[e :U 334 ]
+[e $ ! && != -> . . _PORTCbits 0 2 `i -> 0 `i == _flags -> 2 `i 338  ]
+"219
+[; ;MainGenius.c: 219:            {
+{
+"220
+[; ;MainGenius.c: 220:                flags = 0;
+[e = _flags -> 0 `i ]
+"221
+[; ;MainGenius.c: 221:                Som_Botao2();
+[e ( _Som_Botao2 ..  ]
+"222
+[; ;MainGenius.c: 222:              if(VerificarSequencia(1, pos)){
+[e $ ! != -> ( _VerificarSequencia (2 , -> 1 `i _pos `i -> 0 `i 339  ]
+{
+"223
+[; ;MainGenius.c: 223:                        pos++;
+[e ++ _pos -> 1 `i ]
+"224
+[; ;MainGenius.c: 224:              }
+}
+[e $U 340  ]
+"225
+[; ;MainGenius.c: 225:              else{
+[e :U 339 ]
+{
+"226
+[; ;MainGenius.c: 226:                 Som_Perdeu();
+[e ( _Som_Perdeu ..  ]
+"227
+[; ;MainGenius.c: 227:                 break;
+[e $U 326  ]
+"228
+[; ;MainGenius.c: 228:              }
+}
+[e :U 340 ]
+"229
+[; ;MainGenius.c: 229:            }
+}
+[e $U 341  ]
+"231
+[; ;MainGenius.c: 231:            else if(PORTCbits.RC3 && flags == 3)
+[e :U 338 ]
+[e $ ! && != -> . . _PORTCbits 0 3 `i -> 0 `i == _flags -> 3 `i 342  ]
+"232
+[; ;MainGenius.c: 232:            {
+{
+"233
+[; ;MainGenius.c: 233:                flags = 0;
+[e = _flags -> 0 `i ]
 "234
-[; ;MainGenius.c: 234:            if(PORTCbits.RC1 && flags == 1)
-[e $ ! && != -> . . _PORTCbits 0 1 `i -> 0 `i == _flags -> 1 `i 332  ]
+[; ;MainGenius.c: 234:                Som_Botao3();
+[e ( _Som_Botao3 ..  ]
 "235
-[; ;MainGenius.c: 235:            {
+[; ;MainGenius.c: 235:              if(VerificarSequencia(2, pos)){
+[e $ ! != -> ( _VerificarSequencia (2 , -> 2 `i _pos `i -> 0 `i 343  ]
 {
 "236
-[; ;MainGenius.c: 236:                flags = 0;
-[e = _flags -> 0 `i ]
-"237
-[; ;MainGenius.c: 237:                Som_Botao1();
-[e ( _Som_Botao1 ..  ]
-"238
-[; ;MainGenius.c: 238:              if(VerificarSequencia(0, pos))
-[e $ ! != -> ( _VerificarSequencia (2 , -> 0 `i _pos `i -> 0 `i 333  ]
-"239
-[; ;MainGenius.c: 239:              {
-{
-"240
-[; ;MainGenius.c: 240:                     pos++;
+[; ;MainGenius.c: 236:                     pos++;
 [e ++ _pos -> 1 `i ]
+"237
+[; ;MainGenius.c: 237:              }
+}
+[e $U 344  ]
+"238
+[; ;MainGenius.c: 238:              else{
+[e :U 343 ]
+{
+"239
+[; ;MainGenius.c: 239:                 Som_Perdeu();
+[e ( _Som_Perdeu ..  ]
+"240
+[; ;MainGenius.c: 240:                 break;
+[e $U 326  ]
 "241
 [; ;MainGenius.c: 241:              }
 }
-[e $U 334  ]
+[e :U 344 ]
 "242
-[; ;MainGenius.c: 242:              else{
-[e :U 333 ]
-{
-"243
-[; ;MainGenius.c: 243:                 Som_Perdeu();
-[e ( _Som_Perdeu ..  ]
+[; ;MainGenius.c: 242:            }
+}
+[e $U 345  ]
 "244
-[; ;MainGenius.c: 244:                 break;
-[e $U 324  ]
+[; ;MainGenius.c: 244:            else if(PORTCbits.RC0 && flags == 4)
+[e :U 342 ]
+[e $ ! && != -> . . _PORTCbits 0 0 `i -> 0 `i == _flags -> 4 `i 346  ]
 "245
-[; ;MainGenius.c: 245:              }
-}
-[e :U 334 ]
+[; ;MainGenius.c: 245:            {
+{
 "246
-[; ;MainGenius.c: 246:            }
-}
-[e $U 335  ]
+[; ;MainGenius.c: 246:                flags = 0;
+[e = _flags -> 0 `i ]
 "247
-[; ;MainGenius.c: 247:            else if(PORTCbits.RC2 && flags == 2)
-[e :U 332 ]
-[e $ ! && != -> . . _PORTCbits 0 2 `i -> 0 `i == _flags -> 2 `i 336  ]
+[; ;MainGenius.c: 247:                Som_Botao4();
+[e ( _Som_Botao4 ..  ]
 "248
-[; ;MainGenius.c: 248:            {
+[; ;MainGenius.c: 248:              if(VerificarSequencia(3, pos)){
+[e $ ! != -> ( _VerificarSequencia (2 , -> 3 `i _pos `i -> 0 `i 347  ]
 {
 "249
-[; ;MainGenius.c: 249:                flags = 0;
-[e = _flags -> 0 `i ]
+[; ;MainGenius.c: 249:                     pos++;
+[e ++ _pos -> 1 `i ]
 "250
-[; ;MainGenius.c: 250:                Som_Botao2();
-[e ( _Som_Botao2 ..  ]
+[; ;MainGenius.c: 250:              }
+}
+[e $U 348  ]
 "251
-[; ;MainGenius.c: 251:              if(VerificarSequencia(1, pos)){
-[e $ ! != -> ( _VerificarSequencia (2 , -> 1 `i _pos `i -> 0 `i 337  ]
+[; ;MainGenius.c: 251:              else{
+[e :U 347 ]
 {
 "252
-[; ;MainGenius.c: 252:                     pos++;
-[e ++ _pos -> 1 `i ]
+[; ;MainGenius.c: 252:                 Som_Perdeu();
+[e ( _Som_Perdeu ..  ]
 "253
-[; ;MainGenius.c: 253:              }
-}
-[e $U 338  ]
+[; ;MainGenius.c: 253:                 break;
+[e $U 326  ]
 "254
-[; ;MainGenius.c: 254:              else{
-[e :U 337 ]
-{
-"255
-[; ;MainGenius.c: 255:                 Som_Perdeu();
-[e ( _Som_Perdeu ..  ]
-"256
-[; ;MainGenius.c: 256:                 break;
-[e $U 324  ]
-"257
-[; ;MainGenius.c: 257:              }
-}
-[e :U 338 ]
-"258
-[; ;MainGenius.c: 258:            }
-}
-[e $U 339  ]
-"260
-[; ;MainGenius.c: 260:            else if(PORTCbits.RC3 && flags == 3)
-[e :U 336 ]
-[e $ ! && != -> . . _PORTCbits 0 3 `i -> 0 `i == _flags -> 3 `i 340  ]
-"261
-[; ;MainGenius.c: 261:            {
-{
-"262
-[; ;MainGenius.c: 262:                flags = 0;
-[e = _flags -> 0 `i ]
-"263
-[; ;MainGenius.c: 263:                Som_Botao3();
-[e ( _Som_Botao3 ..  ]
-"264
-[; ;MainGenius.c: 264:              if(VerificarSequencia(2, pos)){
-[e $ ! != -> ( _VerificarSequencia (2 , -> 2 `i _pos `i -> 0 `i 341  ]
-{
-"265
-[; ;MainGenius.c: 265:                     pos++;
-[e ++ _pos -> 1 `i ]
-"266
-[; ;MainGenius.c: 266:              }
-}
-[e $U 342  ]
-"267
-[; ;MainGenius.c: 267:              else{
-[e :U 341 ]
-{
-"268
-[; ;MainGenius.c: 268:                 Som_Perdeu();
-[e ( _Som_Perdeu ..  ]
-"269
-[; ;MainGenius.c: 269:                 break;
-[e $U 324  ]
-"270
-[; ;MainGenius.c: 270:              }
-}
-[e :U 342 ]
-"271
-[; ;MainGenius.c: 271:            }
-}
-[e $U 343  ]
-"273
-[; ;MainGenius.c: 273:            else if(PORTCbits.RC0 && flags == 4)
-[e :U 340 ]
-[e $ ! && != -> . . _PORTCbits 0 0 `i -> 0 `i == _flags -> 4 `i 344  ]
-"274
-[; ;MainGenius.c: 274:            {
-{
-"275
-[; ;MainGenius.c: 275:                flags = 0;
-[e = _flags -> 0 `i ]
-"276
-[; ;MainGenius.c: 276:                Som_Botao4();
-[e ( _Som_Botao4 ..  ]
-"277
-[; ;MainGenius.c: 277:              if(VerificarSequencia(3, pos)){
-[e $ ! != -> ( _VerificarSequencia (2 , -> 3 `i _pos `i -> 0 `i 345  ]
-{
-"278
-[; ;MainGenius.c: 278:                     pos++;
-[e ++ _pos -> 1 `i ]
-"279
-[; ;MainGenius.c: 279:              }
-}
-[e $U 346  ]
-"280
-[; ;MainGenius.c: 280:              else{
-[e :U 345 ]
-{
-"281
-[; ;MainGenius.c: 281:                 Som_Perdeu();
-[e ( _Som_Perdeu ..  ]
-"282
-[; ;MainGenius.c: 282:                 break;
-[e $U 324  ]
-"283
-[; ;MainGenius.c: 283:              }
-}
-[e :U 346 ]
-"284
-[; ;MainGenius.c: 284:             }
-}
-[e :U 344 ]
-[e :U 343 ]
-[e :U 339 ]
-[e :U 335 ]
-"286
-[; ;MainGenius.c: 286:          if( pos > level )
-[e $ ! > _pos _level 347  ]
-"287
-[; ;MainGenius.c: 287:          {
-{
-"288
-[; ;MainGenius.c: 288:              level++;
-[e ++ _level -> 1 `i ]
-"289
-[; ;MainGenius.c: 289:              lcd_clear();
-[e ( _lcd_clear ..  ]
-"290
-[; ;MainGenius.c: 290:              lcd_puts("Fase Concluida");
-[e ( _lcd_puts (1 :s 7C ]
-"291
-[; ;MainGenius.c: 291:              _delay((unsigned long)((1000)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"292
-[; ;MainGenius.c: 292:              lcd_clear();
-[e ( _lcd_clear ..  ]
-"293
-[; ;MainGenius.c: 293:              break;
-[e $U 324  ]
-"294
-[; ;MainGenius.c: 294:         }
-}
-[e :U 347 ]
-"295
-[; ;MainGenius.c: 295:     }
-}
-[e :U 322 ]
-[e $U 323  ]
-[e :U 324 ]
-"296
-[; ;MainGenius.c: 296:         if(level == 20)
-[e $ ! == _level -> 20 `i 348  ]
-"297
-[; ;MainGenius.c: 297:            {
-{
-"298
-[; ;MainGenius.c: 298:               level = 1;
-[e = _level -> 1 `i ]
-"299
-[; ;MainGenius.c: 299:               Som_Ganhou();
-[e ( _Som_Ganhou ..  ]
-"300
-[; ;MainGenius.c: 300:               iniciogame();
-[e ( _iniciogame ..  ]
-"301
-[; ;MainGenius.c: 301:            }
+[; ;MainGenius.c: 254:              }
 }
 [e :U 348 ]
-"302
-[; ;MainGenius.c: 302:     }
+"255
+[; ;MainGenius.c: 255:             }
 }
-[e :U 319 ]
-[e $U 320  ]
+[e :U 346 ]
+[e :U 345 ]
+[e :U 341 ]
+[e :U 337 ]
+"257
+[; ;MainGenius.c: 257:          if( pos > level )
+[e $ ! > _pos _level 349  ]
+"258
+[; ;MainGenius.c: 258:          {
+{
+"259
+[; ;MainGenius.c: 259:              level++;
+[e ++ _level -> 1 `i ]
+"260
+[; ;MainGenius.c: 260:              lcd_clear();
+[e ( _lcd_clear ..  ]
+"261
+[; ;MainGenius.c: 261:              lcd_puts("Fase Concluida");
+[e ( _lcd_puts (1 :s 8C ]
+"262
+[; ;MainGenius.c: 262:              _delay((unsigned long)((1000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"263
+[; ;MainGenius.c: 263:              envia();
+[e ( _envia ..  ]
+"264
+[; ;MainGenius.c: 264:              lcd_clear();
+[e ( _lcd_clear ..  ]
+"265
+[; ;MainGenius.c: 265:              break;
+[e $U 326  ]
+"266
+[; ;MainGenius.c: 266:         }
+}
+[e :U 349 ]
+"267
+[; ;MainGenius.c: 267:     }
+}
+[e :U 324 ]
+[e $U 325  ]
+[e :U 326 ]
+"268
+[; ;MainGenius.c: 268:         if(level == 6)
+[e $ ! == _level -> 6 `i 350  ]
+"269
+[; ;MainGenius.c: 269:            {
+{
+"270
+[; ;MainGenius.c: 270:               envia();
+[e ( _envia ..  ]
+"271
+[; ;MainGenius.c: 271:               level = 1;
+[e = _level -> 1 `i ]
+"272
+[; ;MainGenius.c: 272:               Som_Ganhou();
+[e ( _Som_Ganhou ..  ]
+"274
+[; ;MainGenius.c: 274:               iniciogame();
+[e ( _iniciogame ..  ]
+"275
+[; ;MainGenius.c: 275:            }
+}
+[e :U 350 ]
+"276
+[; ;MainGenius.c: 276:     }
+}
 [e :U 321 ]
-"303
-[; ;MainGenius.c: 303: }
-[e :UE 318 ]
+[e $U 322  ]
+[e :U 323 ]
+"277
+[; ;MainGenius.c: 277: }
+[e :UE 320 ]
 }
 [v $root$_tmr `(v ~T0 @X0 0 e ]
-"305
-[; ;MainGenius.c: 305: void __attribute__((picinterrupt(("high_priority")))) tmr (void)
+"279
+[; ;MainGenius.c: 279: void __attribute__((picinterrupt(("high_priority")))) tmr (void)
 [v _tmr `(v ~T41 @X0 1 ef ]
-"306
-[; ;MainGenius.c: 306: {
+"280
+[; ;MainGenius.c: 280: {
 {
 [e :U _tmr ]
 [f ]
-"307
-[; ;MainGenius.c: 307:     if (RCIF)
-[e $ ! _RCIF 350  ]
-"308
-[; ;MainGenius.c: 308:     {
+"281
+[; ;MainGenius.c: 281:     if (RCIF)
+[e $ ! _RCIF 352  ]
+"282
+[; ;MainGenius.c: 282:     {
 {
-"309
-[; ;MainGenius.c: 309:         RCIF=0;
+"283
+[; ;MainGenius.c: 283:         RCIF=0;
 [e = _RCIF -> -> 0 `i `b ]
-"310
-[; ;MainGenius.c: 310:         if(RCREG==2)
-[e $ ! == -> _RCREG `i -> 2 `i 351  ]
-"311
-[; ;MainGenius.c: 311:         {
+"284
+[; ;MainGenius.c: 284:         if(RCREG==2)
+[e $ ! == -> _RCREG `i -> 2 `i 353  ]
+"285
+[; ;MainGenius.c: 285:         {
 {
-"312
-[; ;MainGenius.c: 312:             level=1;
+"286
+[; ;MainGenius.c: 286:             level=1;
 [e = _level -> 1 `i ]
-"313
-[; ;MainGenius.c: 313:             jogo();
+"287
+[; ;MainGenius.c: 287:             lcd_clear();
+[e ( _lcd_clear ..  ]
+"288
+[; ;MainGenius.c: 288:             lcd_puts("JOGO CANCELADO");
+[e ( _lcd_puts (1 :s 9C ]
+"289
+[; ;MainGenius.c: 289:             _delay((unsigned long)((1000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"290
+[; ;MainGenius.c: 290:             jogo();
 [e ( _jogo ..  ]
-"314
-[; ;MainGenius.c: 314:         }
+"291
+[; ;MainGenius.c: 291:         }
 }
-[e $U 352  ]
-"315
-[; ;MainGenius.c: 315:         else if (RCREG==1){
-[e :U 351 ]
-[e $ ! == -> _RCREG `i -> 1 `i 353  ]
-{
-"316
-[; ;MainGenius.c: 316:             inicio=1;
-[e = _inicio -> 1 `i ]
-"317
-[; ;MainGenius.c: 317:         }
-}
+[e $U 354  ]
+"292
+[; ;MainGenius.c: 292:         else if (RCREG==1){
 [e :U 353 ]
+[e $ ! == -> _RCREG `i -> 1 `i 355  ]
+{
+"293
+[; ;MainGenius.c: 293:             inicio=1;
+[e = _inicio -> 1 `i ]
+"294
+[; ;MainGenius.c: 294:         }
+}
+[e :U 355 ]
+[e :U 354 ]
+"295
+[; ;MainGenius.c: 295:     }
+}
 [e :U 352 ]
-"318
-[; ;MainGenius.c: 318:     }
+"296
+[; ;MainGenius.c: 296: }
+[e :UE 351 ]
 }
-[e :U 350 ]
-"319
-[; ;MainGenius.c: 319: }
-[e :UE 349 ]
-}
+[a 5C 32 124 32 86 111 99 101 32 86 101 110 99 101 117 32 124 0 ]
 [a 3C 80 101 114 100 101 117 0 ]
-[a 4C 80 97 114 97 98 101 110 115 0 ]
 [a 2C 65 112 101 114 116 101 32 101 109 32 106 111 103 97 114 0 ]
-[a 5C 71 101 114 97 110 100 111 0 ]
-[a 7C 70 97 115 101 32 67 111 110 99 108 117 105 100 97 0 ]
+[a 6C 71 101 114 97 110 100 111 0 ]
+[a 8C 70 97 115 101 32 67 111 110 99 108 117 105 100 97 0 ]
+[a 9C 74 79 71 79 32 67 65 78 67 69 76 65 68 79 0 ]
 [a 1C 66 101 109 32 86 105 110 100 111 32 115 50 0 ]
-[a 6C 65 103 117 97 114 100 97 110 100 111 46 46 46 0 ]
+[a 7C 73 110 115 105 114 97 32 115 101 113 117 101 110 99 105 97 46 46 46 0 ]
+[a 4C 32 124 32 80 97 114 97 98 101 110 115 32 124 32 0 ]

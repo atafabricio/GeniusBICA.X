@@ -8,7 +8,7 @@
 #include "configura.h"
 #include "lcd.h"
 
-#define NIVEIS 20
+#define NIVEIS 6
 #define _XTAL_FREQ 4000000
 
 //Botoes
@@ -34,73 +34,43 @@ int flag = 1;
 int Memoria1[NIVEIS];
 //int Memoria2[NIVEIS];
 
-void display(int u)
+
+void envia(void) //envia para o tx
 {
-   
-    const char tabela []={
-    
-/*0*/     0X3F,
-/*1*/     0X06,
-/*2*/     0X5B,
-/*3*/     0X4F,
-/*4*/     0X66,
-/*5*/     0X6D,
-/*6*/     0X7D,
-/*7*/     0X07,
-/*8*/     0X7F,
-/*9*/     0X67,
-/*A*/     0X77,
-/*b*/     0X7C,
-/*C*/     0X39,
-/*d*/     0X5E,
-/*E*/     0X79,
-/*F*/     0X71
-       };
-   PORTD=tabela[u];
-   //LATB1=1;
-   __delay_ms(5);
-   //LATB1=0;           
+    while(!TXIF)
+           {}
+               TXREG = level-1;
 }
 
-void Write_Display(int u){
-     int uni, dez;
-        uni = u%10; 
-        dez = u/10;
-        PORTB = 0B00001000;
-        display(uni);
-        PORTB = 0B00010000;
-        display(dez);
-}
-
-void Som_Botao1()
+void Som_Botao1() //botao 1 acionado
 {
     Led1 = 1;
     __delay_ms(300);
     Led1 = 0;
 }
 
-void Som_Botao2()
+void Som_Botao2() //botao 2 acionado
 {
     Led2 = 1;
     __delay_ms(300);
     Led2 = 0;
 }
 
-void Som_Botao3()
+void Som_Botao3() //botao 3 acionado
 {
     Led3 = 1;
     __delay_ms(300);
     Led3 = 0;
 }
 
-void Som_Botao4()
+void Som_Botao4() //botao 4 acionado
 {
     Led4 = 1;
     __delay_ms(300);
     Led4 = 0;
 }
 
-void Som_Inicial()
+void Som_Inicial() //animação inicio
 {
     Led1 = 1; Led2 = 1; Led3 = 1; Led4 = 1;
     lcd_clear();
@@ -109,7 +79,7 @@ void Som_Inicial()
     Led1 = 0; Led2 = 0; Led3 = 0; Led4 = 0;
 }
 
-void iniciogame()
+void iniciogame() //aguardando rx
 {
     lcd_clear();
     lcd_puts("Aperte em jogar");
@@ -118,33 +88,40 @@ void iniciogame()
         level = 1;
         __delay_ms(100);
         }
+    
     lcd_clear();
     inicio=0;
+    Som_Inicial();
 }
 
-void Som_Perdeu()
+void Som_Perdeu() //animaçao perdeu
 {
+    
     Led1 = 1; Led2 = 1;
     lcd_clear();
     lcd_puts("Perdeu");
+    envia();
     __delay_ms(1000);
     lcd_clear();
     Led1 = 0; Led2 = 0;
+    
     iniciogame();
 }
 
-void Som_Ganhou()
+void Som_Ganhou() //animaçao ganhou
 {
     Led1 = 1; Led2 = 1; Led3 = 1; Led4 = 1;
     lcd_clear();
-    lcd_puts("Parabens");
-    __delay_ms(1000);
+    lcd_puts(" | Parabens | ");
+    lcd_goto(40);
+    lcd_puts(" | Voce Venceu |");
+    __delay_ms(10000);
     lcd_clear();
     Led1 = 0; Led2 = 0; Led3 = 0; Led4 = 0;
 }
 
 //Gera uma sequencia
-void GerarSequencia()
+void GerarSequencia() //gerando a sequencia 1 por 1
 {
 unsigned semente;
 int random;
@@ -197,30 +174,24 @@ void main()
         
     PORTD = 0;
     PORTE = 0;
-    
-   // TMR0 = 6;
-    
-    
-   
-   
-    //__delay_ms(2000);;
-    
+    LATA5=1;
     jogo();
 }
 
 void jogo(){
     GIE=1;
+    TXREG=-1;
     iniciogame();
     int flags = 0;
-    Som_Inicial();
     while(1)
     {      
+        
         GerarSequencia();
         MostraSequencia();
         pos = 1;
                    
         lcd_clear();
-        lcd_puts("Aguardando...");
+        lcd_puts("Insira sequencia...");
         
         while(1)
         {
@@ -249,7 +220,7 @@ void jogo(){
                flags = 0;
                Som_Botao2();             		
              if(VerificarSequencia(1, pos)){
-                    pos++;
+                       pos++;
              }
              else{
                 Som_Perdeu();
@@ -289,14 +260,17 @@ void jogo(){
              lcd_clear();
              lcd_puts("Fase Concluida");
              __delay_ms(1000);
+             envia();
              lcd_clear();
              break;
         }
     }
         if(level == NIVEIS)
            {
+              envia();
               level = 1;
               Som_Ganhou();
+              
               iniciogame();
            }
     }
@@ -310,6 +284,9 @@ void __interrupt(high_priority) tmr (void)
         if(RCREG==2)
         {
             level=1;
+            lcd_clear();
+            lcd_puts("JOGO CANCELADO");
+            __delay_ms(1000);
             jogo();
         }
         else if (RCREG==1){
