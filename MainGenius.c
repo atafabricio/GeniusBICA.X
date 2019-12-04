@@ -35,11 +35,14 @@ int Memoria1[NIVEIS];
 //int Memoria2[NIVEIS];
 
 
-void envia(void) //envia para o tx
+void envia(int acabou) //envia para o tx
 {
     while(!TXIF)
            {}
-               TXREG = level-1;
+    if (acabou == 1)
+        TXREG = level-1;
+    else
+        TXREG = 255;
 }
 
 void Som_Botao1() //botao 1 acionado
@@ -100,7 +103,7 @@ void Som_Perdeu() //animaçao perdeu
     Led1 = 1; Led2 = 1;
     lcd_clear();
     lcd_puts("Perdeu");
-    envia();
+    envia(0);
     __delay_ms(1000);
     lcd_clear();
     Led1 = 0; Led2 = 0;
@@ -260,14 +263,14 @@ void jogo(){
              lcd_clear();
              lcd_puts("Fase Concluida");
              __delay_ms(1000);
-             envia();
+             envia(1);
              lcd_clear();
              break;
         }
     }
         if(level == NIVEIS)
            {
-              envia();
+              envia(0);
               level = 1;
               Som_Ganhou();
               
@@ -281,7 +284,7 @@ void __interrupt(high_priority) tmr (void)
     if (RCIF)
     {
         RCIF=0;        
-        if(RCREG==2)
+        if(RCREG=='2')
         {
             level=1;
             lcd_clear();
@@ -289,7 +292,7 @@ void __interrupt(high_priority) tmr (void)
             __delay_ms(1000);
             jogo();
         }
-        else if (RCREG==1){
+        else if (RCREG=='1'){
             inicio=1;
         }
     }    

@@ -4965,11 +4965,14 @@ int Memoria1[6];
 
 
 
-void envia(void)
+void envia(int acabou)
 {
     while(!TXIF)
            {}
-               TXREG = level-1;
+    if (acabou == 1)
+        TXREG = level-1;
+    else
+        TXREG = 255;
 }
 
 void Som_Botao1()
@@ -5030,7 +5033,7 @@ void Som_Perdeu()
     PORTBbits.RB7 = 1; PORTBbits.RB6 = 1;
     lcd_clear();
     lcd_puts("Perdeu");
-    envia();
+    envia(0);
     _delay((unsigned long)((1000)*(4000000/4000.0)));
     lcd_clear();
     PORTBbits.RB7 = 0; PORTBbits.RB6 = 0;
@@ -5190,14 +5193,14 @@ void jogo(){
              lcd_clear();
              lcd_puts("Fase Concluida");
              _delay((unsigned long)((1000)*(4000000/4000.0)));
-             envia();
+             envia(1);
              lcd_clear();
              break;
         }
     }
         if(level == 6)
            {
-              envia();
+              envia(0);
               level = 1;
               Som_Ganhou();
 
@@ -5211,7 +5214,7 @@ void __attribute__((picinterrupt(("high_priority")))) tmr (void)
     if (RCIF)
     {
         RCIF=0;
-        if(RCREG==2)
+        if(RCREG=='2')
         {
             level=1;
             lcd_clear();
@@ -5219,7 +5222,7 @@ void __attribute__((picinterrupt(("high_priority")))) tmr (void)
             _delay((unsigned long)((1000)*(4000000/4000.0)));
             jogo();
         }
-        else if (RCREG==1){
+        else if (RCREG=='1'){
             inicio=1;
         }
     }
